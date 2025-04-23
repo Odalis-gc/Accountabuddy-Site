@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {font-family: Arial, sans-serif; 
+	  margin: 0; 
+	  padding: 0; 
+	  text-align: center;
+	  overflow-x: hidden;}
+    header {background-color: #f5f5f5;
+     	    padding: 40px 20px;}
+    .logo { height: 100px;
+      	    width: auto;}
+    h1 {margin-top: 20px;
+        color: #333;}
+
+   .hero { padding: 80px 20px;
+	   background: #e0f7fa;
+	   width: 100vw;}
+   .hero h1 { font-size: 2em;
+	      margin-bottom: 10px;}
+   .quote { font-style: italic;
+	    color: #666;
+	    font-size: 1.2em;}
+
+   .social-icons { margin-top: 30px;}
+   .social-icons a { margin: 0 10px;
+ 		     display: inline-block; }
+   .social-icons img { width: 30px;
+		       height: 30px;
+		       vertical-align: middle;}
+
+   footer { background-color: #f5f5f5;
+	    padding: 20px; 
+	    font-size: 0.9em;
+	    color: #777;}
+	
+   nav { display: flex;
+	 justify-content: center;
+	 flex-wrap: wrap;
+	 gap: 15px;
+	 margin: 0;
+	 padding: 10px 0;
+	 margin-top: 40px;}
+   nav a { text-decoration: none;
+  	   color: #0077b6;
+  	   background-color: #e0f7fa;
+  	   padding: 10px 20px;
+  	   margin: 0 10px;
+  	   border-radius: 8px;
+  	   font-weight: bold;
+  	   transition: background-color 0.3s ease, color 0.3s ease, text-decoration 0.3s ease;}
+
+  nav a:hover { background-color: #0077b6;
+  		color: #ffffff;
+  		text-decoration: underline;}
+  .nav-banner { background-color: #17c4c1;
+		padding: 10px 0;
+		width: 100vw;}
+.modal { display: none; 
+     	     position: fixed; 
+     	     z-index: 1; 
+     	     left: 0;
+     	     top: 0;
+     	     width: 100%; 
+      	     height: 100%; 
+      	     overflow: auto; 
+     	     background-color: rgb(0,0,0); 
+     	     background-color: rgba(0,0,0,0.4); 
+    	     padding-top: 60px;}
+
+    .modal-content { background-color: #fefefe;
+      		     margin: 5% auto;
+      		     padding: 20px;
+      		     border: 1px solid #888;
+     		     width: 80%; }
+
+    .close { color: #aaa;
+      	     float: right;
+      	     font-size: 28px;
+      	     font-weight: bold;}
+
+    .close:hover, .close:focus { color: black;
+      				 text-decoration: none;
+      				 cursor: pointer;}
+
+
+    .auth-buttons { margin-top: 40px;}
+
+    .auth-buttons button { background-color: #17c4c1;
+      			   color: white;
+      			   border: none;
+      			   padding: 15px 30px;
+      			   font-size: 1.2em;
+      			   border-radius: 25px;
+      			   cursor: pointer;
+      			   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      			   transition: background-color 0.3s ease, transform 0.3s ease;
+      			   margin: 10px;}
+
+    .auth-buttons button:hover { background-color: #0077b6;
+      				 transform: translateY(-3px);}
+
+    .auth-buttons button:active { transform: translateY(1px);}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img 
+      src="https://static.wixstatic.com/media/a95e92_bac3f7a468d64a3985ba5467c3b6ed8b~mv2.png/v1/fill/w_600,h_100,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Accountabuddy_Logo_Full%20Color.png" 
+      alt="Accountabuddy Logo" 
+      class="logo">
+  </header>
+
+<div class="nav-banner">
+ <nav>
+  <a href="index.html">Home</a>
+  <a href="aboutus.html">About Us</a>
+  <a href="features.html">Features</a>
+  <a href="services.html">Services</a>
+  <a href="resources.html">Resources</a>
+  <a href="contactus.html">Contact Us</a>
+ </nav>
+</div>
+
+
+<section class="hero">
+ <h1> Do you want to keep saying "one day"?<br>Or is today your day one?</h1>
+ <p class="quote">Let's make your goals real - together.</p>
+
+ <div class="auth-buttons">
+   <button id="signupBtn">Sign Up</button>
+   <button id="loginBtn">Log In</button>
+ </div>
+
+ <div class="social-icons">
+   <a href="https://www.instagram.com/accountabuddyco/?hl=en" target="_blank">
+     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"/>
+   </a>
+   <a href="https://www.tiktok.com/@accountabuddy" target="_blank">
+     <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+   </a>
+   <a href="https://www.facebook.com/accountabuddyofficial" target="_blank">
+     <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+   </a>
+ </div>
+</section>
+
+
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('signupModal')">&times;</span>
+      <h2>Sign Up</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf22jlf70UpjPjJu3kHwRue1MDNoHC7hKKys2XtGwjNdQt5Xw/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Log In</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVjPHLDHHI6aYxVag4KdMV5ATKD85xRteHzVnvwMs-o906hw/viewform?embedded=true" width="640" height="554" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+
+  <main>
+    <p>Welcome to AccountaBuddy! The system to keep you on track to hit ALL your goals. Whether it be personal, financial, fitness, spiritual!</p>
+  </main>
+
+<section style="padding: 60px 20px; background-color: #e0f7fa;">
+  <h2 style="color: #0077b6;">🎙️ The AccountaBuddy Podcast</h2>
+  <p style="max-width: 700px; margin: 0 auto; color: #555;">
+    Tune in for real conversations about goal-setting, self-discipline, and stories from the AccountaBuddy community.
+    Watch on YouTube or listen on Apple Podcasts.
+  </p>
+
+
+  <div style="margin-top: 30px;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KDhoDINmYHE?list=PLBQxGfysu_USt-yfKBXXjQrGn8YhvJm-g"
+      title="AccountaBuddy Podcast" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+
+  <div style="margin-top: 20px;">
+    <a href="https://podcasts.apple.com/us/podcast/accountabuddy-podcast/id1616197364" target="_blank" 
+       style="display: inline-block; margin-top: 10px; color: white; background-color: #0077b6; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+      🎧 Listen on Apple Podcasts
+    </a>
+  </div>
+</section>
+
+ <footer>
+  &copy; 2025 Accountabuddy. All rights reserved.
+ </footer>
+
+ <script>
+  // Get the modal
+  var signupModal = document.getElementById("signupModal");
+  var loginModal = document.getElementById("loginModal");
+
+  // Get the buttons that open the modals
+  var signupBtn = document.getElementById("signupBtn");
+  var loginBtn = document.getElementById("loginBtn");
+
+  // Get the <span> element that closes the modal
+  var closeBtns = document.getElementsByClassName("close");
+
+  // When the user clicks the button, open the modal
+  signupBtn.onclick = function() {
+    signupModal.style.display = "block";}
+
+  loginBtn.onclick = function() 
+   { loginModal.style.display = "block";}
+
+  // When the user clicks on <span> (x), close the modal
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";}
+
+  // Close modal if the user clicks outside of the modal content
+  window.onclick = function(event) 
+    { if (event.target == signupModal) 
+    { signupModal.style.display = "none";} else if (event.target == loginModal) 
+    { loginModal.style.display = "none";}
+  }
+ </script>
+
+</body>
+</html>
